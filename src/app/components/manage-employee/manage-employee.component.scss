@@ -1,12 +1,3 @@
-// ::ng-deep .mat-form-field-wrapper {
-//     padding-bottom: 0 !important;
-//     /* Example to reduce padding */
-// }
-
-// ::ng-deep .mat-form-field:not(.mat-form-field-has-label) .mat-form-field-infix {
-//     border-top-width: 0;
-// }
-
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
     padding: 0px 0 9px 0;
     height: 16px;
@@ -34,8 +25,10 @@ ion-item {
     border-radius: 10px;
 }
 
-form {
+.form-div {
     padding: 10px;
+    border: 1.5px solid #4472c4;
+    border-radius: 5px;
 }
 
 .label {
@@ -48,9 +41,4 @@ ion-content {
     --padding-end: 10px;
     --padding-bottom: 10px;
     --padding-top: 10px !important;
-}
-
-form {
-    border: 1px solid #4472c4;
-    border-radius: 5px;
 }

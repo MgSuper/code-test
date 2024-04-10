@@ -47,7 +47,6 @@ CREATE TABLE IF NOT EXISTS employee (
 
   getTotalEmployees() {
     return this.totalEmployees.asObservable();
-    // console.log('this.totalEmployees  this.totalEmployees, ', this.totalEmployees);
     // return this.totalEmployees;
   }
 

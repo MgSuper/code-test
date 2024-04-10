@@ -1,12 +1,9 @@
 .custom-button {
     border: 1px solid #ccc;
-    /* Add border to mimic button outline */
     padding: 5px;
     text-align: center;
     margin-top: 5px;
-    /* Adjust spacing to vertically center if needed */
     border-radius: 5px;
-    /* Optional: for rounded corners */
 }
 
 .toolbar-button {
@@ -32,24 +29,17 @@ ion-item {
 .text-button-with-underline {
     --background: transparent;
     --background-activated: transparent;
-    /* Optional: Ensure the background doesn't change on tap */
     --background-focused: transparent;
-    /* Optional: Ensure the background doesn't change on focus */
     --background-hover: transparent;
-    /* Optional: Ensure the background doesn't change on hover */
     color: black;
-    /* Use the primary color or any color you prefer */
     text-decoration: underline;
     text-transform: none;
 }
 
 .no-wrap-text {
     white-space: nowrap;
-    /* Prevent wrapping */
     overflow: hidden;
-    /* Hide overflow text */
     text-overflow: ellipsis;
-    /* Show an ellipsis for overflow text */
 }
 
 .item-border {
@@ -60,28 +50,9 @@ ion-item {
     padding: 10px;
 }
 
-
-.my-custom-class {
-    --background: #fff;
-    /* Custom background color for the alert */
-    --width: 300px;
-    /* Custom width for the alert */
-    --border-radius: 20px;
-    /* Custom border radius for the alert */
-    --border-color: blue;
-}
-
-.my-custom-class .alert-wrapper {
-    /* Additional styling for the alert's inner wrapper */
-    border-color: blue;
-    border-radius: 20px;
-}
-
 .ok-button-class {
     --background: transparent;
-    /* Custom background color for the delete button */
     color: black;
-    /* Custom text color */
 }
 
 .button-row {
@@ -93,19 +64,14 @@ ion-item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Pushes the list and the controls to opposite ends */
     height: 100%;
-    /* Ensure the container fills the available height */
 }
 
 .pagination-controls {
     display: flex;
     justify-content: center;
-    /* Center pagination controls horizontally */
     align-items: center;
-    /* Align items vertically */
     gap: 20px;
-    /* Optional: Adds some space between your controls */
 }
 
 .page-navigation ion-text {
@@ -153,24 +119,19 @@ ion-item {
 
 .custom-footer {
     position: fixed;
-    /* or 'sticky' */
     left: 0;
     right: 0;
     bottom: 0;
     background-color: #fff;
-    /* or any color you prefer */
     text-align: center;
     padding: 10px 0;
     border-top: none;
-    /* Ensures no top border */
     width: 100%;
     z-index: 1000;
-    /* Ensure it stays above other content */
 }
 
 ion-content {
     --padding-bottom: 60px;
-    /* Adjust based on the height of your custom footer */
 }
 
 .page-select {

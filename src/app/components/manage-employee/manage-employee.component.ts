@@ -27,21 +27,21 @@ export class ManageEmployeeComponent implements OnInit {
       case 'add':
         this.title = 'Employee New';
         this.employeeForm = this.fb.group({
-          name: ['', Validators.required], // Required field
-          department: ['', Validators.required], // Required field
-          position: ['', Validators.required], // Required field
-          dob: [''], // Non-required field
-          nrc: [''], // Non-required field
-          salary: [''], // Non-required field
+          name: ['', Validators.required],
+          department: ['', Validators.required],
+          position: ['', Validators.required],
+          dob: [''],
+          nrc: [''],
+          salary: [''],
         });
         break;
       case 'update':
         this.title = 'Employee Update';
         const dobDate = this.employee.dob ? new Date(this.employee.dob) : null;
         this.employeeForm = this.fb.group({
-          name: new FormControl(this.employee.name, Validators.required),// Required field
-          department: new FormControl(this.employee.department, Validators.required),// Required field
-          position: new FormControl(this.employee.position, Validators.required),// Required field
+          name: new FormControl(this.employee.name, Validators.required),
+          department: new FormControl(this.employee.department, Validators.required),
+          position: new FormControl(this.employee.position, Validators.required),
           dob: new FormControl(dobDate),
           nrc: new FormControl(this.employee.nrc),
           salary: new FormControl(this.employee.salary),
@@ -50,29 +50,22 @@ export class ManageEmployeeComponent implements OnInit {
       case 'filter':
         this.title = 'Employee Search';
         this.employeeForm = this.fb.group({
-          name: ['', Validators.required], // Required field
-          department: ['', Validators.required], // Required field
-          position: ['', Validators.required], // Required field
-          dob: [''], // Non-required field
-          nrc: [''], // Non-required field
-          salary: [''], // Non-required field
+          name: ['', Validators.required],
+          department: ['', Validators.required],
+          position: ['', Validators.required],
+          dob: [''],
+          nrc: [''],
+          salary: [''],
         });
         break;
       default:
         break;
     }
-
-    // this.employeeForm = this.fb.group({
-    //   name: ['', this.mode !== 'filter' ? Validators.required : null],
-    //   department: ['', this.mode !== 'filter' ? Validators.required : null],
-    //   position: ['', this.mode !== 'filter' ? Validators.required : null],
-    //   dob: ['', this.mode === 'add' ? Validators.required : null] // DOB required only for 'add', optional for 'update' and 'filter'
-    // });
   }
 
   formatDate(date: Date): string {
     let day = date.getDate().toString().padStart(2, '0');
-    let month = (date.getMonth() + 1).toString().padStart(2, '0'); // getMonth() is zero-based
+    let month = (date.getMonth() + 1).toString().padStart(2, '0');
     let year = date.getFullYear();
     return `${day}/${month}/${year}`;
   }
@@ -121,7 +114,7 @@ export class ManageEmployeeComponent implements OnInit {
           cssClass: 'ok-button-class',
         }
       ],
-      backdropDismiss: true // Allows closing the alert by clicking outside
+      backdropDismiss: true
     });
     await alert.present();
   }

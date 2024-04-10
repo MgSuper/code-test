@@ -85,7 +85,6 @@ export class EmployeeListPage implements OnInit, OnDestroy {
 
   async deleteEmployee(id: string) {
     const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
       header: 'Warning',
       message: 'Are you sure you want to delete?',
       buttons: [
@@ -117,7 +116,7 @@ export class EmployeeListPage implements OnInit, OnDestroy {
   async addNewEmployee() {
     const modal = await this.modalController.create({
       component: ManageEmployeeComponent,
-      cssClass: 'my-custom-class', // Optional: you can define custom styles in your global.scss or the component's scss
+      cssClass: 'my-custom-class',
       componentProps: {
         mode: 'add'
       }
@@ -128,7 +127,7 @@ export class EmployeeListPage implements OnInit, OnDestroy {
   async filterEmployee() {
     const modal = await this.modalController.create({
       component: ManageEmployeeComponent,
-      cssClass: 'my-custom-class', // Optional: you can define custom styles in your global.scss or the component's scss
+      cssClass: 'my-custom-class',
       componentProps: {
         mode: 'filter'
       }
