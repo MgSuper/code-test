@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Employee Management</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="solid" (click)="filterEmployee()" class="toolbar-button">
+        Filter
+      </ion-button>
+      <ion-button fill="solid" (click)="addNewEmployee()" class="toolbar-button">
+        New
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="list">
+    <ion-list>
+      <ion-item *ngFor="let employee of employees;let i = index;" class="item-border" lines="none">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="1" class="no-wrap-text">
+              {{ (currentPage - 1) * pageSize + i + 1 }}.
+            </ion-col>
+            <ion-col size="2" class="no-wrap-text">
+              {{ employee.name }}
+            </ion-col>
+            <ion-col size="0.5" class="no-wrap-text" style="color: blue;">
+              |
+            </ion-col>
+            <ion-col size="2" class="no-wrap-text">
+              {{ employee.department }}
+            </ion-col>
+            <ion-col size="0.5" class="no-wrap-text" style="color: blue;">
+              |
+            </ion-col>
+            <ion-col size="3.5" class="no-wrap-text">
+              {{ employee.position }}
+            </ion-col>
+            <ion-col size="0.5" class="no-wrap-text" style="color: blue;">
+              |
+            </ion-col>
+            <ion-col size="2" class="no-wrap-text">
+              {{ employee.nrc }}
+            </ion-col>
+          </ion-row>
+          <ion-row class="button-row">
+            <ion-col size="8"></ion-col>
+            <ion-col size="2">
+              <ion-button fill="clear" class="text-button-with-underline" (click)="deleteEmployee(employee.id)">
+                Delete
+              </ion-button>
+            </ion-col>
+            <ion-col size="2">
+              <ion-button fill="clear" class="text-button-with-underline"
+                (click)="updateEmployee(employee, employee.id)">
+                Update
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<div class="custom-footer">
+  <div class="container">
+    <div class="pagination-controls">
+      <div class="page-size-selector">
+        <ion-item lines="none">
+          <ion-label style="padding-right: 10px;">Pages</ion-label>
+          <ion-select [(ngModel)]="pageSize" (ionChange)="onPageSizeChange()" class="page-select">
+            <ion-select-option *ngFor="let pager of pagers" [value]="pager">{{ pager }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <div class="page-navigation">
+        <ion-text (click)="changePage(currentPage - 1)" [class.disabled]="currentPage === 1">
+          &lt;&lt;
+        </ion-text>
+        <ion-text *ngFor="let page of getPageNumbers()" (click)="changePage(page)"
+          [class.highlighted]="page === currentPage" [class.nohighlighted]="page !== currentPage">
+          {{ page }}
+        </ion-text>
+        <ion-text (click)="changePage(currentPage + 1)" [class.disabled]="currentPage === totalPages">
+          &gt;&gt;
+        </ion-text>
+      </div>
+    </div>
+  </div>
+</div>

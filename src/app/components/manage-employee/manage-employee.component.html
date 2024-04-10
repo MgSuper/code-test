@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <ion-row>
+      <ion-col size="4" class="label">Employee Name <ion-text style="color: red">*</ion-text></ion-col>
+      <ion-col size="8">
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="name" required>
+          <mat-error *ngIf="employeeForm.get('name')?.errors?.['required']">
+            Name is required.
+          </mat-error>
+        </mat-form-field>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4" class="label">Department <ion-text style="color: red">*</ion-text></ion-col>
+      <ion-col size="8">
+        <mat-form-field appearance="outline">
+          <mat-select formControlName="department">
+            <mat-option *ngFor="let department of departments" [value]="department">{{ department }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="employeeForm.get('department')?.errors?.['required']">
+            Department is required.
+          </mat-error>
+        </mat-form-field>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4" class="label">Position <ion-text style="color: red">*</ion-text></ion-col>
+      <ion-col size="8">
+        <mat-form-field appearance="outline">
+          <mat-select formControlName="position">
+            <mat-option *ngFor="let position of positions" [value]="position">{{ position }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="employeeForm.get('position')?.errors?.['required']">
+            Position is required.
+          </mat-error>
+        </mat-form-field>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4" class="label">DOB</ion-col>
+      <ion-col size="8">
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="dobPicker" formControlName="dob" readonly>
+          <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+          <mat-datepicker #dobPicker></mat-datepicker>
+        </mat-form-field>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4" class="label">NRC</ion-col>
+      <ion-col size="8">
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="nrc">
+        </mat-form-field>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4" class="label">Salary</ion-col>
+      <ion-col size="8">
+        <mat-form-field appearance="outline">
+          <input matInput type="number" formControlName="salary">
+        </mat-form-field>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="padding-top: 15px;">
+      <ion-col size="6"></ion-col>
+      <ion-col size="3"><ion-button fill="solid" class="act-button" (click)="onCancel()">Cancel</ion-button></ion-col>
+      <ion-col size="3">
+        <!-- <ion-buttons slot="end"> -->
+        <!-- <ion-button fill="solid" class="act-button" (click)="onCancel()">Cancel</ion-button> -->
+        <ion-button fill="solid" class="act-button" *ngIf="mode == 'filter'" type="submit"
+          [disabled]="!employeeForm.valid">Search</ion-button>
+        <ion-button fill="solid" class="act-button" *ngIf="mode == 'add'" type="submit"
+          [disabled]="!employeeForm.valid">Save</ion-button>
+        <ion-button fill="solid" class="act-button" *ngIf="mode == 'update'" type="submit"
+          [disabled]="!employeeForm.valid">Update</ion-button>
+        <!-- </ion-buttons> -->
+      </ion-col>
+    </ion-row>
+  </form>
+
+  <!-- <div class="action-buttons">
+    <button mat-raised-button [style.backgroundColor]="'#4472c4'" (click)="onCancel()">Cancel</button>
+    <button mat-raised-button [style.backgroundColor]="'#4472c4'" *ngIf="mode == 'filter'" type="submit"
+      [disabled]="!employeeForm.valid">Search</button>
+    <button mat-raised-button [style.backgroundColor]="'#4472c4'" *ngIf="mode == 'add'" type="submit"
+      [disabled]="!employeeForm.valid">Save</button>
+    <button mat-raised-button [style.backgroundColor]="'#4472c4'" *ngIf="mode == 'update'" type="submit"
+      [disabled]="!employeeForm.valid">Update</button>
+  </div> -->
+</ion-content>

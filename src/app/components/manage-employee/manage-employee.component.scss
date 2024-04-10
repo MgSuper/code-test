@@ -1,0 +1,56 @@
+// ::ng-deep .mat-form-field-wrapper {
+//     padding-bottom: 0 !important;
+//     /* Example to reduce padding */
+// }
+
+// ::ng-deep .mat-form-field:not(.mat-form-field-has-label) .mat-form-field-infix {
+//     border-top-width: 0;
+// }
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0px 0 9px 0;
+    height: 16px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 45px;
+    padding-top: 15px;
+}
+
+.act-button {
+    --background: #4472c4;
+    text-transform: none;
+    --border-radius: 5px !important;
+}
+
+ion-row {
+    align-items: center;
+}
+
+ion-item {
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+form {
+    padding: 10px;
+}
+
+.label {
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+ion-content {
+    --padding-start: 10px !important;
+    --padding-end: 10px;
+    --padding-bottom: 10px;
+    --padding-top: 10px !important;
+}
+
+form {
+    border: 1px solid #4472c4;
+    border-radius: 5px;
+}

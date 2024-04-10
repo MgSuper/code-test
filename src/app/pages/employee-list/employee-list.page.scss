@@ -1,0 +1,178 @@
+.custom-button {
+    border: 1px solid #ccc;
+    /* Add border to mimic button outline */
+    padding: 5px;
+    text-align: center;
+    margin-top: 5px;
+    /* Adjust spacing to vertically center if needed */
+    border-radius: 5px;
+    /* Optional: for rounded corners */
+}
+
+.toolbar-button {
+    --background: #4472c4;
+    text-transform: none;
+    --border-radius: 5px !important;
+}
+
+ion-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-overflow: ellipsis;
+}
+
+ion-item {
+    --border-radius: 10px;
+    --padding-start: 1px;
+    --inner-padding-end: 2px;
+    text-overflow: ellipsis;
+}
+
+.text-button-with-underline {
+    --background: transparent;
+    --background-activated: transparent;
+    /* Optional: Ensure the background doesn't change on tap */
+    --background-focused: transparent;
+    /* Optional: Ensure the background doesn't change on focus */
+    --background-hover: transparent;
+    /* Optional: Ensure the background doesn't change on hover */
+    color: black;
+    /* Use the primary color or any color you prefer */
+    text-decoration: underline;
+    text-transform: none;
+}
+
+.no-wrap-text {
+    white-space: nowrap;
+    /* Prevent wrapping */
+    overflow: hidden;
+    /* Hide overflow text */
+    text-overflow: ellipsis;
+    /* Show an ellipsis for overflow text */
+}
+
+.item-border {
+    --border-style: solid;
+    --border-width: 1px;
+    --border-color: grey;
+    --border-radius: 20px;
+    padding: 10px;
+}
+
+
+.my-custom-class {
+    --background: #fff;
+    /* Custom background color for the alert */
+    --width: 300px;
+    /* Custom width for the alert */
+    --border-radius: 20px;
+    /* Custom border radius for the alert */
+    --border-color: blue;
+}
+
+.my-custom-class .alert-wrapper {
+    /* Additional styling for the alert's inner wrapper */
+    border-color: blue;
+    border-radius: 20px;
+}
+
+.ok-button-class {
+    --background: transparent;
+    /* Custom background color for the delete button */
+    color: black;
+    /* Custom text color */
+}
+
+.button-row {
+    --inner-padding-end: 2px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Pushes the list and the controls to opposite ends */
+    height: 100%;
+    /* Ensure the container fills the available height */
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    /* Center pagination controls horizontally */
+    align-items: center;
+    /* Align items vertically */
+    gap: 20px;
+    /* Optional: Adds some space between your controls */
+}
+
+.page-navigation ion-text {
+    cursor: pointer;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+
+.highlighted {
+    cursor: pointer;
+    padding: 0 8px;
+    font-weight: bold;
+    color: white;
+    border: 1px solid #ccc;
+    width: 26px;
+    height: 26px;
+    line-height: 25px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #EA7C30;
+    text-align: center;
+    justify-items: center;
+}
+
+.nohighlighted {
+    cursor: pointer;
+    padding: 0 8px;
+    font-weight: normal;
+    color: white;
+    border: 1px solid #ccc;
+    width: 26px;
+    height: 26px;
+    line-height: 25px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #4472c4;
+    text-align: center;
+    justify-items: center;
+}
+
+.disabled {
+    color: grey;
+    cursor: not-allowed;
+}
+
+.custom-footer {
+    position: fixed;
+    /* or 'sticky' */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    /* or any color you prefer */
+    text-align: center;
+    padding: 10px 0;
+    border-top: none;
+    /* Ensures no top border */
+    width: 100%;
+    z-index: 1000;
+    /* Ensure it stays above other content */
+}
+
+ion-content {
+    --padding-bottom: 60px;
+    /* Adjust based on the height of your custom footer */
+}
+
+.page-select {
+    max-width: fit-content;
+}
